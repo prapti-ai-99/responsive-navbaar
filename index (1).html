@@ -1,0 +1,395 @@
+<html>
+    <head>
+        <style>
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+        
+        body {
+            background: #212121;
+            font-size:22px;
+            line-height: 32px;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            word-wrap:break-word !important;
+            font-family: 'Open Sans', sans-serif;
+            }
+        
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            color: #FFF;
+        }	
+        
+        h3 {
+            font-size: 30px;
+            line-height: 34px;
+            text-align: center;
+            color: #FFF;
+        }
+        
+        h3 a {
+            color: #FFF;
+        }
+        
+        a {
+            color: #FFF;
+        }
+        
+        h1 {
+            margin-top: 100px;
+            text-align:center;
+            font-size:60px;
+            line-height: 70px;
+            font-family: 'Bree Serif', 'serif';
+            }
+        
+        #container {
+            margin: 0 auto;
+            max-width: 890px;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        .toggle,
+        [id^=drop] {
+            display: none;
+        }
+        
+        nav { 
+            margin:0;
+            padding: 0;
+            background-color: #254441;
+        }
+        
+        #logo {
+            display: block;
+            padding: 0 30px;
+            float: left;
+            font-size:20px;
+            line-height: 60px;
+        }
+        
+     
+        
+        nav:after {
+            content:"";
+            display:table;
+            clear:both;
+        }
+        
+       
+        nav ul {
+            float: right;
+            padding:0;
+            margin:0;
+            list-style: none;
+            position: relative;
+            }
+            
+        
+        nav ul li {
+            margin: 0px;
+            display:inline-block;
+            float: left;
+            background-color: #254441;
+            }
+        
+        
+        nav a {
+            display:block;
+            padding:14px 20px;	
+            color:#FFF;
+            font-size:17px;
+            text-decoration:none;
+        }
+        
+        
+        nav ul li ul li:hover { background: #000000; }
+      
+        nav a:hover { 
+            background-color: #000000; 
+        }
+        
+    
+        nav ul ul {
+            display: none;
+            position: absolute; 
+           
+            top: 60px; 
+        }
+            
+       
+        nav ul li:hover > ul {
+            display:inherit;
+        }
+            
+        
+        nav ul ul li {
+            width:170px;
+            float:none;
+            display:list-item;
+            position: relative;
+        }
+        
+       
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: auto;
+    right: 170px;
+}
+        
+       
+        li > a:after { content:  ' +'; }
+        li > a:only-child:after { content: ''; }
+        
+        
+       
+        
+        @media all and (max-width : 768px) {
+        
+            #logo {
+                display: block;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                float: none;
+            }
+        
+            nav {
+                margin: 0;
+            }
+        
+            
+            .toggle + a,
+            .menu {
+                display: none;
+            }
+        
+            
+            .toggle {
+                display: block;
+                background-color: #254441;
+                padding:14px 20px;	
+                color:#FFF;
+                font-size:17px;
+                text-decoration:none;
+                border:none;
+            }
+        
+            .toggle:hover {
+                background-color: #000000;
+            }
+        
+           
+            [id^=drop]:checked + ul {
+                display: block;
+            }
+        
+           
+            nav ul li {
+                display: block;
+                width: 100%;
+                }
+        
+            nav ul ul .toggle,
+            nav ul ul a {
+                padding: 0 40px;
+            }
+        
+            nav ul ul ul a {
+                padding: 0 80px;
+            }
+        
+            nav a:hover,
+             nav ul ul ul a {
+                background-color: #000000;
+            }
+          
+            nav ul li ul li .toggle,
+            nav ul ul a,
+          nav ul ul ul a{
+                padding:14px 20px;	
+                color:#FFF;
+                font-size:17px; 
+            }
+          
+          
+            nav ul li ul li .toggle,
+            nav ul ul a {
+                background-color: #212121; 
+            }
+        
+           
+            nav ul ul {
+                float: none;
+                position:static;
+                color: #ffffff;
+                
+            }
+                
+          
+            nav ul ul li:hover > ul,
+            nav ul li:hover > ul {
+                display: none;
+            }
+                
+           
+            nav ul ul li {
+                display: block;
+                width: 100%;
+            }
+        
+            nav ul ul ul li {
+                position: static;
+                
+            }
+        
+        }
+        
+        @media all and (max-width : 330px) {
+        
+            nav ul li {
+                display:block;
+                width: 94%;
+            }
+        
+        }
+        .open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+
+.form-container {
+  max-width: 90vw;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+}
+
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: #254441;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+        </style>
+    </head>
+
+
+<body>
+<nav >
+    <div id="logo"><img src="c:\Users\HELLO\Pictures\service_crm2.jpg" height="50px" width="50px" style="margin-top: 5px;"> </div>
+
+    <label for="drop" class="toggle">Menu</label>
+    <input type="checkbox" id="drop" />
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li>
+          
+                <label for="drop-1" class="toggle">Services</label>
+                <a href="#">Services</a>
+                <input type="checkbox" id="drop-1"/>
+                <ul>
+                    <li><a href="#">Services</a>
+                        <ul class="dropdown-menu dropdown-submenu">
+                            <li>
+                              <a class="dropdown-item" href="#">Hi</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#">Hello</a>
+                            </li>
+                        </ul></li>
+                    
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul> 
+
+            </li>
+            <li>
+
+            
+            
+            <li><a href="#">About</a></li>
+            <li><a href="#" onclick="openForm()">Contact</a></li>
+        </ul>
+    </nav>
+    
+   
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Login</h1>
+        
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+</body>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</html>
